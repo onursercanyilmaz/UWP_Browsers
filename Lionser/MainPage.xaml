@@ -1,0 +1,717 @@
+﻿<Page
+    x:Class="Lionser.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lionser"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Background="#FF1C1C1C">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/logo.png" Stretch="None"/>
+        </Grid.Background>
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="3a017f89-7481-484d-86fa-e99c77c83308"/>
+            </Grid.Background>
+            <Pivot x:Name="pvt" Margin="0,0,0,2" HorizontalAlignment="Center" FontSize="9">
+                <PivotItem x:Name="pvt1" Foreground="#FFE71B1B" Background="{x:Null}" Margin="-2,-35,0,-1" >
+                    <PivotItem.Header>
+                        <TextBlock x:Name="txtBlock1" Text="Hello Browser" FontFamily="Heart Breaking Bad" FontSize="10" Height="48" Width="94"/>
+                    </PivotItem.Header>
+                    <Grid Margin="-3,14,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="1455*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="477*"/>
+                            <RowDefinition Height="491*"/>
+                        </Grid.RowDefinitions>
+                        <CommandBar Height="39" Margin="-3,-13,1,0" Grid.ColumnSpan="2">
+                            <CommandBar.Content>
+                                <Grid/>
+                            </CommandBar.Content>
+                            <AppBarButton x:Name="backBtn1" Label="" VerticalAlignment="Center" Background="{x:Null}" Click="backBtn1_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/backbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="homeBtn1" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="homeBtn1_Click">
+                                <AppBarButton.Background>
+                                    <ImageBrush ImageSource="/logo.png" Stretch="Uniform"/>
+                                </AppBarButton.Background>
+                            </AppBarButton>
+                            <AppBarButton x:Name="forwardBtn1" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="forwardBtn1_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/forwardbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="refreshBtn1" Label="" Click="refreshBtn1_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/refresh.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="Contactbtn1" Icon="Mail" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Contactbtn1_Click"/>
+                            <AppBarButton x:Name="Helpbtn1" Icon="List" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Helpbtn1_Click"/>
+                        </CommandBar>
+                        <TextBlock x:Name="textBlock1" Text="Lionser" TextWrapping="Wrap" Margin="35,-5,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" Width="69" Grid.ColumnSpan="2">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.42"/>
+                                    <GradientStop Color="#FFD26805" Offset="0.026"/>
+                                    <GradientStop Color="#FF1F1F1F" Offset="1"/>
+                                    <GradientStop Color="#FF363639" Offset="0.705"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBox x:Name="textBox1" Grid.Column="1" HorizontalAlignment="Left" Margin="176,-10,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" Width="808" FontSize="18" Background="{x:Null}" BorderBrush="#FF606060" TextAlignment="Center" PlaceholderText="Welcome to Lionser" KeyDown="textBox1_KeyDown" InputScope="Url" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled" TextChanged="textBox1_TextChanged"/>
+                        <WebView x:Name="webBrowser1" Margin="0,28,2,0" Grid.RowSpan="2" Grid.ColumnSpan="2" NavigationStarting="webBrowser1_NavigationStarting" NavigationCompleted="webBrowser1_NavigationCompleted" LoadCompleted="webBrowser1_LoadCompleted" NewWindowRequested="OnNewWindowRequested"/>
+                        <ProgressBar x:Name="proBar1" Grid.Column="1" HorizontalAlignment="Left" Height="9" Margin="180,27,0,0" VerticalAlignment="Top" Width="801" Background="{x:Null}" Foreground="#FFD26805" RenderTransformOrigin="0.5,0.5" IsTabStop="False" LargeChange="0" IsIndeterminate="True" IsEnabled="False">
+                            <ProgressBar.RenderTransform>
+                                <CompositeTransform ScaleY="-1"/>
+                            </ProgressBar.RenderTransform>
+                        </ProgressBar>
+                    </Grid>
+                </PivotItem>
+                <PivotItem x:Name="pvt2" Foreground="#FFE71B1B" Background="{x:Null}" Margin="-2,-35,0,-1" >
+                    <PivotItem.Header>
+                        <TextBlock x:Name="txtBlock2" Text="Hello Browser" FontFamily="Heart Breaking Bad" FontSize="10" Height="48" Width="94"/>
+                    </PivotItem.Header>
+                    <Grid Margin="-3,14,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="1455*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="477*"/>
+                            <RowDefinition Height="491*"/>
+                        </Grid.RowDefinitions>
+                        <WebView x:Name="webBrowser2" Margin="0,28,2,0" Grid.RowSpan="2" Grid.ColumnSpan="2" LoadCompleted="webBrowser2_LoadCompleted" NavigationCompleted="webBrowser2_NavigationCompleted" NavigationStarting="webBrowser2_NavigationStarting" NewWindowRequested="OnNewWindowRequested"/>
+                        <CommandBar Height="39" Margin="-3,-13,1,0" Grid.ColumnSpan="2">
+                            <CommandBar.Content>
+                                <Grid/>
+                            </CommandBar.Content>
+                            <AppBarButton x:Name="backBtn2" Label="" VerticalAlignment="Center" Background="{x:Null}" Click="backBtn2_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/backbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="homeBtn2" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="homeBtn2_Click">
+                                <AppBarButton.Background>
+                                    <ImageBrush ImageSource="/logo.png" Stretch="Uniform"/>
+                                </AppBarButton.Background>
+                            </AppBarButton>
+                            <AppBarButton x:Name="forwardBtn2" Label="" VerticalAlignment="Center" Click="forwardBtn2_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/forwardbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="refreshBtn2" Label="" Click="refreshBtn2_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/refresh.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="Contactbtn2" Icon="Mail" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Contactbtn2_Click"/>
+                            <AppBarButton x:Name="Helpbtn2" Icon="List" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Helpbtn2_Click"/>
+                        </CommandBar>
+                        <TextBlock x:Name="textBlock2" Text="Lionser" TextWrapping="Wrap" Margin="35,-5,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" Width="69" Grid.ColumnSpan="2">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.525"/>
+                                    <GradientStop Color="#FFD26805" Offset="1"/>
+                                    <GradientStop Color="#FF1F1F1F" Offset="0.016"/>
+                                    <GradientStop Color="#FF363639" Offset="0.193"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBox x:Name="textBox2" Grid.Column="1" HorizontalAlignment="Left" Margin="176,-10,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" Width="808" FontSize="18" Background="{x:Null}" BorderBrush="#FF606060" TextAlignment="Center" PlaceholderText="Welcome to Lionser" KeyDown="textBox2_KeyDown" TextChanged="textBox2_TextChanged"/>
+                        <ProgressBar x:Name="proBar2" Grid.Column="1" HorizontalAlignment="Left" Height="9" Margin="180,27,0,0" VerticalAlignment="Top" Width="801" Background="{x:Null}" Foreground="#FFD26805" RenderTransformOrigin="0.5,0.5" IsTabStop="False" LargeChange="0" IsIndeterminate="True" IsEnabled="False">
+                            <ProgressBar.RenderTransform>
+                                <CompositeTransform ScaleY="-1"/>
+                            </ProgressBar.RenderTransform>
+                        </ProgressBar>
+                    </Grid>
+                </PivotItem>
+                <PivotItem x:Name="pvt3" Foreground="#FFE71B1B" Background="{x:Null}" Margin="-2,-35,0,-1" >
+                    <PivotItem.Header>
+                        <TextBlock x:Name="txtBlock3" Text="Hello Browser" FontFamily="Heart Breaking Bad" FontSize="10" Height="48" Width="94"/>
+                    </PivotItem.Header>
+                    <Grid Margin="-3,14,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="1455*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="477*"/>
+                            <RowDefinition Height="491*"/>
+                        </Grid.RowDefinitions>
+                        <WebView x:Name="webBrowser3" Margin="0,28,2,0" Grid.RowSpan="2" Grid.ColumnSpan="2" LoadCompleted="webBrowser3_LoadCompleted" NavigationCompleted="webBrowser3_NavigationCompleted" NavigationStarting="webBrowser3_NavigationStarting" NewWindowRequested="OnNewWindowRequested"/>
+                        <CommandBar Height="39" Margin="-3,-13,1,0" Grid.ColumnSpan="2">
+                            <CommandBar.Content>
+                                <Grid/>
+                            </CommandBar.Content>
+                            <AppBarButton x:Name="backBtn3" Label="" VerticalAlignment="Center" Background="{x:Null}" Click="backBtn3_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/backbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="homeBtn3" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="homeBtn3_Click">
+                                <AppBarButton.Background>
+                                    <ImageBrush ImageSource="/logo.png" Stretch="Uniform"/>
+                                </AppBarButton.Background>
+                            </AppBarButton>
+                            <AppBarButton x:Name="forwardBtn3" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="forwardBtn3_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/forwardbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="refreshBtn3" Label="" Click="refreshBtn3_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/refresh.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="Contactbtn3" Icon="Mail" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Contactbtn3_Click"/>
+                            <AppBarButton x:Name="Helpbtn3" Icon="List" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Helpbtn3_Click"/>
+                        </CommandBar>
+                        <TextBlock x:Name="textBlock3" Text="Lionser" TextWrapping="Wrap" Margin="35,-5,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" Width="69" Grid.ColumnSpan="2">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.525"/>
+                                    <GradientStop Color="#FFD26805" Offset="1"/>
+                                    <GradientStop Color="#FF1F1F1F" Offset="0.016"/>
+                                    <GradientStop Color="#FF363639" Offset="0.193"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBox x:Name="textBox3" Grid.Column="1" HorizontalAlignment="Left" Margin="176,-10,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" Width="808" FontSize="18" Background="{x:Null}" BorderBrush="#FF606060" TextAlignment="Center" PlaceholderText="Welcome to Lionser" KeyDown="textBox3_KeyDown" TextChanged="textBox3_TextChanged"/>
+                        <ProgressBar x:Name="proBar3" Grid.Column="1" HorizontalAlignment="Left" Height="9" Margin="180,27,0,0" VerticalAlignment="Top" Width="801" Background="{x:Null}" Foreground="#FFD26805" RenderTransformOrigin="0.5,0.5" IsTabStop="False" LargeChange="0" IsIndeterminate="True" IsEnabled="False">
+                            <ProgressBar.RenderTransform>
+                                <CompositeTransform ScaleY="-1"/>
+                            </ProgressBar.RenderTransform>
+                        </ProgressBar>
+                    </Grid>
+                </PivotItem>
+                <PivotItem x:Name="pvt4" Foreground="#FFE71B1B" Background="{x:Null}" Margin="-2,-35,0,-1" >
+                    <PivotItem.Header>
+                        <TextBlock x:Name="txtBlock4" Text="Hello Browser" FontFamily="Heart Breaking Bad" FontSize="10" Height="48" Width="94"/>
+                    </PivotItem.Header>
+                    <Grid Margin="-3,14,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="1455*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="477*"/>
+                            <RowDefinition Height="491*"/>
+                        </Grid.RowDefinitions>
+                        <WebView x:Name="webBrowser4" Margin="0,28,2,0" Grid.RowSpan="2" Grid.ColumnSpan="2" LoadCompleted="webBrowser4_LoadCompleted" NewWindowRequested="OnNewWindowRequested" NavigationCompleted="webBrowser4_NavigationCompleted" NavigationStarting="webBrowser4_NavigationStarting"/>
+                        <CommandBar Height="39" Margin="-3,-13,1,0" Grid.ColumnSpan="2">
+                            <CommandBar.Content>
+                                <Grid/>
+                            </CommandBar.Content>
+                            <AppBarButton x:Name="backBtn4" Label="" VerticalAlignment="Center" Background="{x:Null}" Click="backBtn4_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/backbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="homeBtn4" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="homeBtn4_Click">
+                                <AppBarButton.Background>
+                                    <ImageBrush ImageSource="/logo.png" Stretch="Uniform"/>
+                                </AppBarButton.Background>
+                            </AppBarButton>
+                            <AppBarButton x:Name="forwardBtn4" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="forwardBtn4_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/forwardbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="refreshBtn4" Label="" Click="refreshBtn4_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/refresh.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="Contactbtn4" Icon="Mail" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Contactbtn4_Click"/>
+                            <AppBarButton x:Name="Helpbtn4" Icon="List" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Helpbtn4_Click"/>
+                        </CommandBar>
+                        <TextBlock x:Name="textBlock4" Text="Lionser" TextWrapping="Wrap" Margin="35,-5,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" Width="69" Grid.ColumnSpan="2">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.525"/>
+                                    <GradientStop Color="#FFD26805" Offset="1"/>
+                                    <GradientStop Color="#FF1F1F1F" Offset="0.016"/>
+                                    <GradientStop Color="#FF363639" Offset="0.193"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBox x:Name="textBox4" Grid.Column="1" HorizontalAlignment="Left" Margin="176,-10,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" Width="808" FontSize="18" Background="{x:Null}" BorderBrush="#FF606060" TextAlignment="Center" PlaceholderText="Welcome to Lionser" KeyDown="textBox4_KeyDown" TextChanged="textBox4_TextChanged"/>
+                        <ProgressBar x:Name="proBar4" Grid.Column="1" HorizontalAlignment="Left" Height="9" Margin="180,27,0,0" VerticalAlignment="Top" Width="801" Background="{x:Null}" Foreground="#FFD26805" RenderTransformOrigin="0.5,0.5" IsTabStop="False" LargeChange="0" IsIndeterminate="True" IsEnabled="False">
+                            <ProgressBar.RenderTransform>
+                                <CompositeTransform ScaleY="-1"/>
+                            </ProgressBar.RenderTransform>
+                        </ProgressBar>
+                    </Grid>
+                </PivotItem>
+                <PivotItem x:Name="pvt5" Foreground="#FFE71B1B" Background="{x:Null}" Margin="-2,-35,0,-1" >
+                    <PivotItem.Header>
+                        <TextBlock x:Name="txtBlock5" Text="Hello Browser" FontFamily="Heart Breaking Bad" FontSize="10" Height="48" Width="94"/>
+                    </PivotItem.Header>
+                    <Grid Margin="-3,14,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="1455*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="477*"/>
+                            <RowDefinition Height="491*"/>
+                        </Grid.RowDefinitions>
+                        <WebView x:Name="webBrowser5" Margin="0,28,2,0" Grid.RowSpan="2" Grid.ColumnSpan="2" LoadCompleted="webBrowser5_LoadCompleted" NewWindowRequested="OnNewWindowRequested" NavigationStarting="webBrowser5_NavigationStarting" NavigationCompleted="webBrowser5_NavigationCompleted"/>
+                        <CommandBar Height="39" Margin="-3,-13,1,0" Grid.ColumnSpan="2">
+                            <CommandBar.Content>
+                                <Grid/>
+                            </CommandBar.Content>
+                            <AppBarButton x:Name="backBtn5" Label="" VerticalAlignment="Center" Background="{x:Null}" Click="backBtn5_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/backbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="homeBtn5" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="homeBtn5_Click">
+                                <AppBarButton.Background>
+                                    <ImageBrush ImageSource="/logo.png" Stretch="Uniform"/>
+                                </AppBarButton.Background>
+                            </AppBarButton>
+                            <AppBarButton x:Name="forwardBtn5" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="forwardBtn5_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/forwardbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="refreshBtn5" Label="" Click="refreshBtn5_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/refresh.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="Contactbtn5" Icon="Mail" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Contactbtn5_Click"/>
+                            <AppBarButton x:Name="Helpbtn5" Icon="List" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Helpbtn5_Click"/>
+                        </CommandBar>
+                        <TextBlock x:Name="textBlock5" Text="Lionser" TextWrapping="Wrap" Margin="35,-5,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" Width="69" Grid.ColumnSpan="2">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.525"/>
+                                    <GradientStop Color="#FFD26805" Offset="1"/>
+                                    <GradientStop Color="#FF1F1F1F" Offset="0.016"/>
+                                    <GradientStop Color="#FF363639" Offset="0.193"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBox x:Name="textBox5" Grid.Column="1" HorizontalAlignment="Left" Margin="176,-10,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" Width="808" FontSize="18" Background="{x:Null}" BorderBrush="#FF606060" TextAlignment="Center" PlaceholderText="Welcome to Lionser" KeyDown="textBox5_KeyDown" TextChanged="textBox5_TextChanged"/>
+                        <ProgressBar x:Name="proBar5" Grid.Column="1" HorizontalAlignment="Left" Height="9" Margin="180,27,0,0" VerticalAlignment="Top" Width="801" Background="{x:Null}" Foreground="#FFD26805" RenderTransformOrigin="0.5,0.5" IsTabStop="False" LargeChange="0" IsIndeterminate="True" IsEnabled="False">
+                            <ProgressBar.RenderTransform>
+                                <CompositeTransform ScaleY="-1"/>
+                            </ProgressBar.RenderTransform>
+                        </ProgressBar>
+                    </Grid>
+                </PivotItem>
+                <PivotItem x:Name="pvt6" Foreground="#FFE71B1B" Background="{x:Null}" Margin="-2,-35,0,-1" >
+                    <PivotItem.Header>
+                        <TextBlock x:Name="txtBlock6" Text="Hello Browser" FontFamily="Heart Breaking Bad" FontSize="10" Height="48" Width="94"/>
+                    </PivotItem.Header>
+                    <Grid Margin="-3,14,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="1455*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="477*"/>
+                            <RowDefinition Height="491*"/>
+                        </Grid.RowDefinitions>
+                        <WebView x:Name="webBrowser6" Margin="0,28,2,0" Grid.RowSpan="2" Grid.ColumnSpan="2" LoadCompleted="webBrowser6_LoadCompleted" NewWindowRequested="OnNewWindowRequested" NavigationStarting="webBrowser6_NavigationStarting" NavigationCompleted="webBrowser6_NavigationCompleted"/>
+                        <CommandBar Height="39" Margin="-3,-13,1,0" Grid.ColumnSpan="2">
+                            <CommandBar.Content>
+                                <Grid/>
+                            </CommandBar.Content>
+                            <AppBarButton x:Name="backBtn6" Label="" VerticalAlignment="Center" Background="{x:Null}" Click="backBtn6_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/backbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="homeBtn6" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="homeBtn6_Click">
+                                <AppBarButton.Background>
+                                    <ImageBrush ImageSource="/logo.png" Stretch="Uniform"/>
+                                </AppBarButton.Background>
+                            </AppBarButton>
+                            <AppBarButton x:Name="forwardBtn6" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="forwardBtn6_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/forwardbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="refreshBtn6" Label="" Click="refreshBtn6_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/refresh.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="Contactbtn6" Icon="Mail" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Contactbtn6_Click"/>
+                            <AppBarButton x:Name="Helpbtn6" Icon="List" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Helpbtn6_Click"/>
+                        </CommandBar>
+                        <TextBlock x:Name="textBlock6" Text="Lionser" TextWrapping="Wrap" Margin="35,-5,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" Width="69" Grid.ColumnSpan="2">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.525"/>
+                                    <GradientStop Color="#FFD26805" Offset="1"/>
+                                    <GradientStop Color="#FF1F1F1F" Offset="0.016"/>
+                                    <GradientStop Color="#FF363639" Offset="0.193"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBox x:Name="textBox6" Grid.Column="1" HorizontalAlignment="Left" Margin="176,-10,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" Width="808" FontSize="18" Background="{x:Null}" BorderBrush="#FF606060" TextAlignment="Center" PlaceholderText="Welcome to Lionser" KeyDown="textBox6_KeyDown" TextChanged="textBox6_TextChanged"/>
+                        <ProgressBar x:Name="proBar6" Grid.Column="1" HorizontalAlignment="Left" Height="9" Margin="180,27,0,0" VerticalAlignment="Top" Width="801" Background="{x:Null}" Foreground="#FFD26805" RenderTransformOrigin="0.5,0.5" IsTabStop="False" LargeChange="0" IsIndeterminate="True" IsEnabled="False">
+                            <ProgressBar.RenderTransform>
+                                <CompositeTransform ScaleY="-1"/>
+                            </ProgressBar.RenderTransform>
+                        </ProgressBar>
+                    </Grid>
+                </PivotItem>
+                <PivotItem x:Name="pvt7" Foreground="#FFE71B1B" Background="{x:Null}" Margin="-2,-35,0,-1" >
+                    <PivotItem.Header>
+                        <TextBlock x:Name="txtBlock7" Text="Hello Browser" FontFamily="Heart Breaking Bad" FontSize="10" Height="48" Width="94"/>
+                    </PivotItem.Header>
+                    <Grid Margin="-3,14,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="1455*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="477*"/>
+                            <RowDefinition Height="491*"/>
+                        </Grid.RowDefinitions>
+                        <WebView x:Name="webBrowser7" Margin="0,28,2,0" Grid.RowSpan="2" Grid.ColumnSpan="2" LoadCompleted="webBrowser7_LoadCompleted" NewWindowRequested="OnNewWindowRequested" NavigationStarting="webBrowser7_NavigationStarting" NavigationCompleted="webBrowser7_NavigationCompleted"/>
+                        <CommandBar Height="39" Margin="-3,-13,1,0" Grid.ColumnSpan="2">
+                            <CommandBar.Content>
+                                <Grid/>
+                            </CommandBar.Content>
+                            <AppBarButton x:Name="backBtn7" Label="" VerticalAlignment="Center" Background="{x:Null}" Click="backBtn7_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/backbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="homeBtn7" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="homeBtn7_Click">
+                                <AppBarButton.Background>
+                                    <ImageBrush ImageSource="/logo.png" Stretch="Uniform"/>
+                                </AppBarButton.Background>
+                            </AppBarButton>
+                            <AppBarButton x:Name="forwardBtn7" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="forwardBtn7_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/forwardbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="refreshBtn7" Label="" Click="refreshBtn7_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/refresh.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="Contactbtn7" Icon="Mail" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Contactbtn7_Click"/>
+                            <AppBarButton x:Name="Helpbtn7" Icon="List" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Helpbtn7_Click"/>
+                        </CommandBar>
+                        <TextBlock x:Name="textBlock7" Text="Lionser" TextWrapping="Wrap" Margin="35,-5,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" Width="69" Grid.ColumnSpan="2">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.525"/>
+                                    <GradientStop Color="#FFD26805" Offset="1"/>
+                                    <GradientStop Color="#FF1F1F1F" Offset="0.016"/>
+                                    <GradientStop Color="#FF363639" Offset="0.193"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBox x:Name="textBox7" Grid.Column="1" HorizontalAlignment="Left" Margin="176,-10,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" Width="808" FontSize="18" Background="{x:Null}" BorderBrush="#FF606060" TextAlignment="Center" PlaceholderText="Welcome to Lionser" KeyDown="textBox7_KeyDown" TextChanged="textBox7_TextChanged"/>
+                        <ProgressBar x:Name="proBar7" Grid.Column="1" HorizontalAlignment="Left" Height="9" Margin="180,27,0,0" VerticalAlignment="Top" Width="801" Background="{x:Null}" Foreground="#FFD26805" RenderTransformOrigin="0.5,0.5" IsTabStop="False" LargeChange="0" IsIndeterminate="True" IsEnabled="False">
+                            <ProgressBar.RenderTransform>
+                                <CompositeTransform ScaleY="-1"/>
+                            </ProgressBar.RenderTransform>
+                        </ProgressBar>
+                    </Grid>
+                </PivotItem>
+                <PivotItem x:Name="pvt8" Foreground="#FFE71B1B" Background="{x:Null}" Margin="-2,-35,0,-1" >
+                    <PivotItem.Header>
+                        <TextBlock x:Name="txtBlock8" Text="Hello Browser" FontFamily="Heart Breaking Bad" FontSize="10" Height="48" Width="94"/>
+                    </PivotItem.Header>
+                    <Grid Margin="-3,14,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="1455*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="477*"/>
+                            <RowDefinition Height="491*"/>
+                        </Grid.RowDefinitions>
+                        <WebView x:Name="webBrowser8" Margin="0,28,2,0" Grid.RowSpan="2" Grid.ColumnSpan="2" LoadCompleted="webBrowser8_LoadCompleted" NewWindowRequested="OnNewWindowRequested" NavigationStarting="webBrowser8_NavigationStarting" NavigationCompleted="webBrowser8_NavigationCompleted"/>
+                        <CommandBar Height="39" Margin="-3,-13,1,0" Grid.ColumnSpan="2">
+                            <CommandBar.Content>
+                                <Grid/>
+                            </CommandBar.Content>
+                            <AppBarButton x:Name="backBtn8" Label="" VerticalAlignment="Center" Background="{x:Null}" Click="backBtn8_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/backbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="homeBtn8" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="homeBtn8_Click">
+                                <AppBarButton.Background>
+                                    <ImageBrush ImageSource="/logo.png" Stretch="Uniform"/>
+                                </AppBarButton.Background>
+                            </AppBarButton>
+                            <AppBarButton x:Name="forwardBtn8" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="forwardBtn8_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/forwardbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="refreshBtn8" Label="" Click="refreshBtn8_Click" VerticalAlignment="Center">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/refresh.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="Contactbtn8" Icon="Mail" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Contactbtn8_Click"/>
+                            <AppBarButton x:Name="Helpbtn8" Icon="List" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Helpbtn8_Click"/>
+                        </CommandBar>
+                        <TextBlock x:Name="textBlock8" Text="Lionser" TextWrapping="Wrap" Margin="35,-5,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" Width="69" Grid.ColumnSpan="2">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.525"/>
+                                    <GradientStop Color="#FFD26805" Offset="1"/>
+                                    <GradientStop Color="#FF1F1F1F" Offset="0.016"/>
+                                    <GradientStop Color="#FF363639" Offset="0.193"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBox x:Name="textBox8" Grid.Column="1" HorizontalAlignment="Left" Margin="176,-10,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" Width="808" FontSize="18" Background="{x:Null}" BorderBrush="#FF606060" TextAlignment="Center" PlaceholderText="Welcome to Lionser" KeyDown="textBox8_KeyDown" TextChanged="textBox8_TextChanged"/>
+                        <ProgressBar x:Name="proBar8" Grid.Column="1" HorizontalAlignment="Left" Height="9" Margin="180,27,0,0" VerticalAlignment="Top" Width="801" Background="{x:Null}" Foreground="#FFD26805" RenderTransformOrigin="0.5,0.5" IsTabStop="False" LargeChange="0" IsIndeterminate="True" IsEnabled="False">
+                            <ProgressBar.RenderTransform>
+                                <CompositeTransform ScaleY="-1"/>
+                            </ProgressBar.RenderTransform>
+                        </ProgressBar>
+                    </Grid>
+                </PivotItem>
+                <PivotItem x:Name="pvt9" Foreground="#FFE71B1B" Background="{x:Null}" Margin="-2,-35,0,-1" >
+                    <PivotItem.Header>
+                        <TextBlock x:Name="txtBlock9" Text="Hello Browser" FontFamily="Heart Breaking Bad" FontSize="10" Height="48" Width="94"/>
+                    </PivotItem.Header>
+                    <Grid Margin="-3,14,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="1455*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="477*"/>
+                            <RowDefinition Height="491*"/>
+                        </Grid.RowDefinitions>
+                        <WebView x:Name="webBrowser9" Margin="0,28,2,0" Grid.RowSpan="2" Grid.ColumnSpan="2" LoadCompleted="webBrowser9_LoadCompleted" NewWindowRequested="OnNewWindowRequested"/>
+                        <CommandBar Height="39" Margin="-3,-13,1,0" Grid.ColumnSpan="2">
+                            <CommandBar.Content>
+                                <Grid/>
+                            </CommandBar.Content>
+                            <AppBarButton x:Name="backBtn9" Label="" VerticalAlignment="Center" Background="{x:Null}" Click="backBtn9_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/backbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="homeBtn9" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="homeBtn9_Click">
+                                <AppBarButton.Background>
+                                    <ImageBrush ImageSource="/logo.png" Stretch="Uniform"/>
+                                </AppBarButton.Background>
+                            </AppBarButton>
+                            <AppBarButton x:Name="forwardBtn9" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="forwardBtn9_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/forwardbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="refreshBtn9" Label="" Click="refreshBtn9_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/refresh.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="Contactbtn9" Icon="Mail" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Contactbtn9_Click"/>
+                            <AppBarButton x:Name="Helpbtn9" Icon="List" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Helpbtn9_Click"/>
+                        </CommandBar>
+                        <TextBlock x:Name="textBlock9" Text="Lionser" TextWrapping="Wrap" Margin="35,-5,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" Width="69" Grid.ColumnSpan="2">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.525"/>
+                                    <GradientStop Color="#FFD26805" Offset="1"/>
+                                    <GradientStop Color="#FF1F1F1F" Offset="0.016"/>
+                                    <GradientStop Color="#FF363639" Offset="0.193"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBox x:Name="textBox9" Grid.Column="1" HorizontalAlignment="Left" Margin="176,-10,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" Width="808" FontSize="18" Background="{x:Null}" BorderBrush="#FF606060" TextAlignment="Center" PlaceholderText="Welcome to Lionser" KeyDown="textBox9_KeyDown" TextChanged="textBox9_TextChanged"/>
+                        <ProgressBar x:Name="proBar9" Grid.Column="1" HorizontalAlignment="Left" Height="9" Margin="180,27,0,0" VerticalAlignment="Top" Width="801" Background="{x:Null}" Foreground="#FFD26805" RenderTransformOrigin="0.5,0.5" IsTabStop="False" LargeChange="0" IsIndeterminate="True" IsEnabled="False">
+                            <ProgressBar.RenderTransform>
+                                <CompositeTransform ScaleY="-1"/>
+                            </ProgressBar.RenderTransform>
+                        </ProgressBar>
+                    </Grid>
+                </PivotItem>
+                <PivotItem x:Name="pvt10" Foreground="#FFE71B1B" Background="{x:Null}" Margin="-2,-35,0,-1" >
+                    <PivotItem.Header>
+                        <TextBlock x:Name="txtBlock10" Text="Hello Browser" FontFamily="Heart Breaking Bad" FontSize="10" Height="48" Width="94"/>
+                    </PivotItem.Header>
+                    <Grid Margin="-3,14,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="1455*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="477*"/>
+                            <RowDefinition Height="491*"/>
+                        </Grid.RowDefinitions>
+                        <WebView x:Name="webBrowser10" Margin="0,28,2,0" Grid.RowSpan="2" Grid.ColumnSpan="2" LoadCompleted="webBrowser10_LoadCompleted" NewWindowRequested="OnNewWindowRequested"/>
+                        <CommandBar Height="39" Margin="-3,-13,1,0" Grid.ColumnSpan="2">
+                            <CommandBar.Content>
+                                <Grid/>
+                            </CommandBar.Content>
+                            <AppBarButton x:Name="backBtn10" Label="" VerticalAlignment="Center" Background="{x:Null}" Click="backBtn10_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/backbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="homeBtn10" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="homeBtn10_Click">
+                                <AppBarButton.Background>
+                                    <ImageBrush ImageSource="/logo.png" Stretch="Uniform"/>
+                                </AppBarButton.Background>
+                            </AppBarButton>
+                            <AppBarButton x:Name="forwardBtn10" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="forwardBtn10_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/forwardbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="refreshBtn10" Label="" Click="refreshBtn10_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/refresh.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="Contactbtn10" Icon="Mail" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Contactbtn10_Click"/>
+                            <AppBarButton x:Name="Helpbtn10" Icon="List" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Helpbtn10_Click"/>
+                        </CommandBar>
+                        <TextBlock x:Name="textBlock10" Text="Lionser" TextWrapping="Wrap" Margin="35,-5,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" Width="69" Grid.ColumnSpan="2">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.525"/>
+                                    <GradientStop Color="#FFD26805" Offset="1"/>
+                                    <GradientStop Color="#FF1F1F1F" Offset="0.016"/>
+                                    <GradientStop Color="#FF363639" Offset="0.193"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBox x:Name="textBox10" Grid.Column="1" HorizontalAlignment="Left" Margin="176,-10,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" Width="808" FontSize="18" Background="{x:Null}" BorderBrush="#FF606060" TextAlignment="Center" PlaceholderText="Welcome to Lionser" KeyDown="textBox10_KeyDown" TextChanged="textBox10_TextChanged"/>
+                        <ProgressBar x:Name="proBar10" Grid.Column="1" HorizontalAlignment="Left" Height="9" Margin="180,27,0,0" VerticalAlignment="Top" Width="801" Background="{x:Null}" Foreground="#FFD26805" RenderTransformOrigin="0.5,0.5" IsTabStop="False" LargeChange="0" IsIndeterminate="True" IsEnabled="False">
+                            <ProgressBar.RenderTransform>
+                                <CompositeTransform ScaleY="-1"/>
+                            </ProgressBar.RenderTransform>
+                        </ProgressBar>
+                    </Grid>
+                </PivotItem>
+                <PivotItem x:Name="pvt11" Foreground="#FFE71B1B" Background="{x:Null}" Margin="-2,-35,0,-1" >
+                    <PivotItem.Header>
+                        <TextBlock x:Name="txtBlock11" Text="Hello Browser" FontFamily="Heart Breaking Bad" FontSize="10" Height="48" Width="94"/>
+                    </PivotItem.Header>
+                    <Grid Margin="-3,14,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="1455*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="477*"/>
+                            <RowDefinition Height="491*"/>
+                        </Grid.RowDefinitions>
+                        <WebView x:Name="webBrowser11" Margin="0,28,2,0" Grid.RowSpan="2" Grid.ColumnSpan="2" LoadCompleted="webBrowser11_LoadCompleted" NewWindowRequested="OnNewWindowRequested" />
+                        <CommandBar Height="39" Margin="-3,-13,1,0" Grid.ColumnSpan="2">
+                            <CommandBar.Content>
+                                <Grid/>
+                            </CommandBar.Content>
+                            <AppBarButton x:Name="backBtn11" Label="" VerticalAlignment="Center" Background="{x:Null}" Click="backBtn11_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/backbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="homeBtn11" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="homeBtn11_Click">
+                                <AppBarButton.Background>
+                                    <ImageBrush ImageSource="/logo.png" Stretch="Uniform"/>
+                                </AppBarButton.Background>
+                            </AppBarButton>
+                            <AppBarButton x:Name="forwardBtn11" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="forwardBtn11_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/forwardbtn.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="refreshBtn11" Label="" Click="refreshBtn11_Click">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/refresh.png"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                            <AppBarButton x:Name="Contactbtn11" Icon="Mail" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Contactbtn11_Click"/>
+                            <AppBarButton x:Name="Helpbtn11" Icon="List" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Helpbtn11_Click"/>
+                        </CommandBar>
+                        <TextBlock x:Name="textBlock11" Text="Lionser" TextWrapping="Wrap" Margin="35,-5,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" Width="69" Grid.ColumnSpan="2">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.525"/>
+                                    <GradientStop Color="#FFD26805" Offset="1"/>
+                                    <GradientStop Color="#FF1F1F1F" Offset="0.016"/>
+                                    <GradientStop Color="#FF363639" Offset="0.193"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBox x:Name="textBox11" Grid.Column="1" HorizontalAlignment="Left" Margin="176,-10,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" Width="808" FontSize="18" Background="{x:Null}" BorderBrush="#FF606060" TextAlignment="Center" PlaceholderText="Welcome to Lionser" KeyDown="textBox11_KeyDown" TextChanged="textBox11_TextChanged"/>
+                        <ProgressBar x:Name="proBar11" Grid.Column="1" HorizontalAlignment="Left" Height="9" Margin="180,27,0,0" VerticalAlignment="Top" Width="801" Background="{x:Null}" Foreground="#FFD26805" RenderTransformOrigin="0.5,0.5" IsTabStop="False" LargeChange="0" IsIndeterminate="True" IsEnabled="False">
+                            <ProgressBar.RenderTransform>
+                                <CompositeTransform ScaleY="-1"/>
+                            </ProgressBar.RenderTransform>
+                        </ProgressBar>
+                    </Grid>
+                </PivotItem>
+                <PivotItem x:Name="pvthistory" Foreground="#FFE71B1B" Background="{x:Null}" Margin="-2,-35,0,-1" >
+                    <PivotItem.Header>
+                        <TextBlock x:Name="txtBlock12" Text="History" FontFamily="Heart Breaking Bad" FontSize="10" Height="48" Width="94"/>
+                    </PivotItem.Header>
+                    <Grid Margin="-3,14,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="1455*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="477*"/>
+                            <RowDefinition Height="491*"/>
+                        </Grid.RowDefinitions>
+                        <CommandBar Height="39" Margin="-3,-13,1,0" Grid.ColumnSpan="2">
+                            <CommandBar.Content>
+                                <Grid/>
+                            </CommandBar.Content>
+                            <AppBarButton x:Name="Helpbtn12" Icon="Delete" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Helpbtn12_Click"/>
+                        </CommandBar>
+                        <TextBlock x:Name="textBlock13" Text="Lionser" TextWrapping="Wrap" Margin="35,-5,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" Width="69" Grid.ColumnSpan="2">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.525"/>
+                                    <GradientStop Color="#FFD26805" Offset="1"/>
+                                    <GradientStop Color="#FF1F1F1F" Offset="0.016"/>
+                                    <GradientStop Color="#FF363639" Offset="0.193"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <ListBox x:Name="listBox" Grid.ColumnSpan="2" Margin="0,38,9,12" Grid.RowSpan="2"/>
+                    </Grid>
+                </PivotItem>
+            </Pivot>
+
+        </Grid>
+
+    </Grid>
+</Page>
